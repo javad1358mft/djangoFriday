@@ -1,18 +1,19 @@
 from django.shortcuts import render
+from .models import UserProfile
 
 # Create your views here.
 
 
 def addeducation(request):
-    return render(request, 'accounts/add-education.html', {})
+    return render(request, 'accounts/addeducation.html', {})
 
 
 def addexperience(request):
-    return render(request, 'accounts/add-experience.html', {})
+    return render(request, 'accounts/addexperience.html', {})
 
 
 def createprofile(request):
-    return render(request, 'accounts/create-profile.html', {})
+    return render(request, 'accounts/createprofile.html', {})
 
 
 def dashboard(request):
@@ -24,7 +25,8 @@ def login(request):
 
 
 def profile(request):
-    return render(request, 'accounts/profile.html', {})
+    user_profile=UserProfile.objects.get(id=2)
+    return render(request, 'accounts/profile.html', {"user_profile":user_profile})
 
 
 def profiles(request):

@@ -1,3 +1,4 @@
+{% extends "base.html" %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -20,16 +21,8 @@
     <title>Welcome to the DevConnector</title>
   </head>
   <body>
-    <nav class="navbar bg-dark">
-      <h1>
-        <a href="dashboard.html"> <i class="fas fa-code"></i> DevConnector </a>
-      </h1>
-      <ul>
-        <li><a href="profiles.html">Developers</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
+  {% block content %}
+    
     <section class="container">
       <!-- Alert -->
       <div class="alert alert-danger">
@@ -53,5 +46,6 @@
         Don't have an account? <a href="register.html">Sign Up</a>
       </p>
     </section>
+  {% endblock content %}
   </body>
 </html>
